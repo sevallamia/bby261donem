@@ -138,7 +138,7 @@ burclar = {
 }
 
 # ------------------------------
-# Eleman tabanlı basit uyum hesaplama
+# Eleman tabanlı uyum hesaplama
 # ------------------------------
 elementler = {
     "Ateş": ["Koç","Aslan","Yay"],
@@ -189,7 +189,6 @@ def burc_bul(gun, ay):
             return burc
         elif bas_ay < bit_ay and ay == bit_ay and gun <= bit_gun:
             return burc
-    return None
 
 # ------------------------------
 # Tkinter pencere
@@ -211,7 +210,7 @@ def ana_menu():
     btn = tk.Button(root, text="Burç Yorumu ve Uyum Hesaplama", font=("Arial",14), width=30, command=burc_yorumu)
     btn.pack(pady=10)
 
-    btn2 = tk.Button(root, text="Tüm Burçları HTML Olarak Kaydet", font=("Arial",12), command=html_kaydet)
+    btn2 = tk.Button(root, text="Tüm Burçları Kaydet", font=("Arial",12), command=html_kaydet)
     btn2.pack(pady=8)
 
     aciklama = tk.Label(root, text="Not: Tarih alanına sadece **gün ve ay** girin. Farklı ayraçlar kabul edilir.\nÖrnekler: 05.09, 5/9, 05-09, 5/9/2000 (yıl ihmal edilir)", wraplength=580, justify="center")
@@ -264,7 +263,7 @@ def burc_yorumu():
         # 3. Boş girdileri filtreleyerek parçalara ayır
         parts = [p for p in s2.split(".") if p]
         
-        gun, ay = None, None
+        gun, ay = None,None
         
         # Çıktı etiketlerini sıfırla
         sonuc_label.config(text="Sonuçlar burada gösterilecektir.")
