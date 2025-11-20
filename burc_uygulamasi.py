@@ -176,7 +176,6 @@ def burc_bul(gun, ay):
         (bas_gun, bas_ay),(bit_gun, bit_ay) = info["tarih"]
         if (ay == bas_ay and gun >= bas_gun) or (ay == bit_ay and gun <= bit_gun):
             return burc
-    return None
 
 # ------------------------------
 # Tkinter pencere
